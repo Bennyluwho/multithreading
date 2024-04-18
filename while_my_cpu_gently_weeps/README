@@ -1,0 +1,85 @@
+========================================================================
+__        ___   _ ___ _     _____   __  ____   __   ____ ____  _   _ 
+\ \      / / | | |_ _| |   | ____| |  \/  \ \ / /  / ___|  _ \| | | |
+ \ \ /\ / /| |_| || || |   |  _|   | |\/| |\ V /  | |   | |_) | | | |
+  \ V  V / |  _  || || |___| |___  | |  | | | |   | |___|  __/| |_| |
+   \_/\_/  |_| |_|___|_____|_____| |_|  |_| |_|    \____|_|    \___/ 
+                                                                     
+  ____ _____ _   _ _____ _  __   __ __        _______ _____ ____  ____  
+ / ___| ____| \ | |_   _| | \ \ / / \ \      / / ____| ____|  _ \/ ___| 
+| |  _|  _| |  \| | | | | |  \ V /   \ \ /\ / /|  _| |  _| | |_) \___ \ 
+| |_| | |___| |\  | | | | |___| |     \ V  V / | |___| |___|  __/ ___) |
+ \____|_____|_| \_| |_| |_____|_|      \_/\_/  |_____|_____|_|   |____/ 
+                                                                        
+========================================================================
+
+Enjoy While My Guitar Gently Weeps: https://www.youtube.com/watch?v=CrTMc2i6Lzc
+Or the Main Squeeze's cover here: https://www.youtube.com/watch?v=GwOaBb_0Umc
+
+Purpose: To teach you parallel computing.
+
+Objective: Write a simple version of rgrep (recursive grep AKA grep -r) that
+will search for a word in a directory tree.
+
+Learning Points:
+1) How to get all the files in a directory in C++ (found in <filesystem>)
+2) Using C++ threads (found in <thread>)
+3) Using OpenMP (found in <omp.h>)
+4) Using Mutexes and Lock Guards (found in <mutex>)
+5) Creating a thread pool
+6) String comparisons? File I/O? You should know those, so just practice with
+them
+7) PGO - Profile Guided Optimization
+8) Benchmarking
+
+Your job is to take as input two strings:
+1) A single word to search for (we will do whole word search, no partial match
+or regex or anything like that, although that would be fun)
+2) A directory to search within
+
+You will output to standard out:
+A list of files in that directory that contain that word, in alphabetical
+order
+
+You will output to standard error:
+How long it took you to perform the operation
+
+You will implement this code five times and send the timing results to me on
+Canvas. 
+1) The boring single-threaded implementation (which should be the first thing
+you write), it just opens all the files in the directory and reads a word at a
+time, and stops if it gets a match (and prints the file name). Give the timing
+with the optimizer on (-O3). (20 points for correctness - autograded)
+2) Use PGO (profile guided optimization) and see if that improves your running
+time. If you don't remember/know PGO, compile your code with
+-fprofile-generate and run your code a bunch of times. Then recompile the code
+with -fprofile-use and see if your code is faster now. (5 points)
+3) Using OpenMP to automatically parallelize the hot loop (5 points)
+4) Using threads, where each thread will be given a different file to open.
+Use mutexes/lock guards to stop threads from printing over each other (5
+points)
+5) Creating a thread pool that will pull work from a shared queue of work. Try
+different thread pool sizes until you find one that works the fastest (5
+points).
+
+A thread pool means rather than spawning a ton of threads, you just
+make N threads, and when they finish working on a bit of word (like searching
+through a single file) they go to the work queue and grab the next file to
+search.
+
+Example Run:
+Please enter the word to search for: Hamlet
+Please enter the directory to search in: /public/shakespeare
+/public/shakespeare/all_tragedies
+/public/shakespeare/all
+/public/shakespeare/tragedies/hamlet
+
+Sample source code:
+There's a ton of sample source code for you to look at. filesystem.cc holds
+how to get a list of all files recursively from a given path. 
+zeta.c and hello_openmp.c are sample files in C showing you how easy it is to
+use openmp
+summer.cc is a C++ openmp program that just sums up a lot of random numbers,
+again showing you how easy it is to parallelize code using OpenMP
+The ASM_demos directory has files 21_threads.c and 22_openmp.cc which have
+demos of how to do threads and OpenMP as well

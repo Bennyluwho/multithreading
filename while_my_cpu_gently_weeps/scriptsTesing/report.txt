@@ -1,0 +1,67 @@
+[H[J-----------------------------------------------------------------------------------------
+RUNNING PROGRAM 10 TIMES WITH -O3
+Test: 1
+Time Elapsed: 2972 ms
+Test: 2
+Time Elapsed: 2985 ms
+Test: 3
+Time Elapsed: 2961 ms
+Test: 4
+Time Elapsed: 2952 ms
+Test: 5
+Time Elapsed: 2967 ms
+Test: 6
+Time Elapsed: 2963 ms
+Test: 7
+Time Elapsed: 2968 ms
+Test: 8
+Time Elapsed: 2971 ms
+Test: 9
+Time Elapsed: 2971 ms
+Test: 10
+Time Elapsed: 3395 ms
+-----------------------------------------------------------------------------------------
+RUNNING PROGRAM 10 TIMES WITH PGO
+Test: 1
+Time Elapsed: 3062 ms
+Test: 2
+Time Elapsed: 2985 ms
+Test: 3
+Time Elapsed: 3041 ms
+Test: 4
+Time Elapsed: 3076 ms
+Test: 5
+Time Elapsed: 3012 ms
+Test: 6
+Time Elapsed: 3025 ms
+Test: 7
+Time Elapsed: 3051 ms
+Test: 8
+Time Elapsed: 3030 ms
+Test: 9
+Time Elapsed: 2998 ms
+Test: 10
+Time Elapsed: 2990 ms
+-----------------------------------------------------------------------------------------
+RUNNING PROGRAM 10 TIMES WITH OMP MAGIC
+Test: 1
+Time Elapsed: 1196 ms
+Test: 2
+Time Elapsed: 1224 ms
+Test: 3
+Time Elapsed: 1217 ms
+Test: 4
+Time Elapsed: 1223 ms
+Test: 5
+Time Elapsed: 1227 ms
+Test: 6
+Time Elapsed: 1214 ms
+Test: 7
+Time Elapsed: 1217 ms
+Test: 8
+Time Elapsed: 1208 ms
+Test: 9
+Time Elapsed: 1199 ms
+Test: 10
+Time Elapsed: 1232 ms
+-----------------------------------------------------------------------------------------

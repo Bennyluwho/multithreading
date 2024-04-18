@@ -1,0 +1,66 @@
+-----------------------------------------------------------------------------------------
+RUNNING OLD PROGRAM 10 TIMES WITH -O3
+Test: 1
+Time Elapsed: 3004 ms
+Test: 2
+Time Elapsed: 3075 ms
+Test: 3
+Time Elapsed: 3017 ms
+Test: 4
+Time Elapsed: 3001 ms
+Test: 5
+Time Elapsed: 3080 ms
+Test: 6
+Time Elapsed: 3081 ms
+Test: 7
+Time Elapsed: 3053 ms
+Test: 8
+Time Elapsed: 3034 ms
+Test: 9
+Time Elapsed: 3023 ms
+Test: 10
+Time Elapsed: 3037 ms
+-----------------------------------------------------------------------------------------
+RUNNING PROGRAM 10 TIMES WITH OMP MAGIC AND OMP_NUM_THREADS=16
+Test: 1
+Time Elapsed: 1465 ms
+Test: 2
+Time Elapsed: 1454 ms
+Test: 3
+Time Elapsed: 1466 ms
+Test: 4
+Test: 5
+Time Elapsed: 1445 ms
+Test: 6
+Time Elapsed: 1474 ms
+Test: 7
+Time Elapsed: 1408 ms
+Test: 8
+Time Elapsed: 1387 ms
+Test: 9
+Time Elapsed: 1460 ms
+Test: 10
+Time Elapsed: 1418 ms
+-----------------------------------------------------------------------------------------
+RUNNING PROGRAM 10 TIMES WITH 16 THREADS
+Test: 1
+Time Elapsed: 507 ms
+Test: 2
+Time Elapsed: 514 ms
+Test: 3
+Time Elapsed: 488 ms
+Test: 4
+Time Elapsed: 482 ms
+Test: 5
+Time Elapsed: 560 ms
+Test: 6
+Time Elapsed: 509 ms
+Test: 7
+Time Elapsed: 488 ms
+Test: 8
+Time Elapsed: 475 ms
+Test: 9
+Time Elapsed: 453 ms
+Test: 10
+Time Elapsed: 464 ms
+-----------------------------------------------------------------------------------------
